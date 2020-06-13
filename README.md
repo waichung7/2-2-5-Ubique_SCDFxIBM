@@ -1,5 +1,6 @@
 # CallForCode2020
- 
+
+![Ubique Icon](/assets/icon.png)
 # Ubique
 Group Name: 2+2=5
 
