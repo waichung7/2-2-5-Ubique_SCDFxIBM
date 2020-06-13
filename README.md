@@ -26,7 +26,7 @@ Singapore is facing the problem of an [ageing population](https://www.population
 The rise of internet-enabled devices brought about by the Internet of Things (IoT) means that relevant parties (e.g. SCDF) have greater access to an increased breadth and depth of data from IoT-enabled devices. These parties can leverage upon the wealth of information provided to initiate rapid initial responses upon the onset of disasters, intervening in these incidents before they become more severe, thereby reducing the likelihood of such small incidents from escalating in severity.
 
 ### The idea
-Ubique is a monitoring software system empowered by machines learning for diverse IoT devices, including CCTVs, environment sensors and power usage sensors. Ubique provides monitoring metrics and accurate predictions on emergency incidences, advising the emergency services on appropriate actions to optimize efficiency of scarce emergency resources. 
+Ubique is an early warning system empowered by machine learning, making use of diverse IoT devices, including CCTVs, environment sensors and power usage sensors. Ubique provides accurate predictions on emergency incidences, advising the emergency services on appropriate actions to optimize efficiency of scarce emergency resources. 
 
 Ubique obtains information from multiple sensors, utilizing artificial intelligence services to filter out relevant data. Ubique then utilizes Node-RED to combine the information available, running it through pre-set criteria and determining the action taken. If an action is necessary, Ubique then triggers a response, which may or may not involve the user/relevant parties, depending on the consumer's requirements and plan of action.
 
