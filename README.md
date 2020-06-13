@@ -51,7 +51,7 @@ Ubique obtains information from multiple sensors, utilizing artificial intellige
 
 ## Project Roadmap
 
-[More detail is available here](ROADMAP.md)
+[More detail is available here](ROADMAP.MD)
 
 ## Getting Started
 ***
