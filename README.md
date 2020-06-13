@@ -1,7 +1,7 @@
 # CallForCode2020
  
-# Group Name: 2+2=5
-Github link is reflected as such due to limitations of symbols in links.
+# Ubique
+Group Name: 2+2=5
 
 ## Contents
 
@@ -20,24 +20,21 @@ Github link is reflected as such due to limitations of symbols in links.
 ## Short description
 
 ### What's the problem?
-Infrastructure is getting “smart”, with sensors and Internet of things (IoT) increasingly embedded in the built environment (e.g. Punggol Digital District). How might we leverage a network of smart infrastructure in the built environment to make better and more timely sense of emergency incidents (e.g. detection of fires developing, building collapses, falls, road traffic accidents etc.) and to trigger early intervention measures, without the need to activate precious emergency resources? 
-
+Singapore is facing the problem of an [ageing population](https://www.population.sg/articles/singapores-silver-age), which also results in the decline of workforce participation, a problem the SCDF faces as well. Limited manpower in the SCDF, combined with limited equipment and emergency vehicles, combined with a [rise in fire incidents and EMS calls as shown in 2019](https://www.scdf.gov.sg/docs/default-source/scdf-library/amb-fire-inspection-statistics/scdf-annual-statistics-2019.pdf), means that it is imperative emergency resources are as efficiently channeled as possible. 
 
 ### How can technology help?
-Technology provides a multitude of resources and sensors that consumers and developers can leverage upon. 
-
+The rise of internet-enabled devices brought about by the Internet of Things (IoT) means that relevant parties (e.g. SCDF) have greater access to an increased breadth and depth of data from IoT-enabled devices. These parties can leverage upon the wealth of information provided to initiate rapid initial responses upon the onset of disasters, intervening in these incidents before they become more severe, thereby reducing the likelihood of such small incidents from escalating in severity.
 
 ### The idea
-
-
+Ubique obtains information from multiple sensors, utilizing artificial intelligence services to filter out relevant data. Ubique then utilizes Node-RED to combine the information available, running it through pre-set criteria and determining the action taken. If an action is necessary, Ubique then triggers a response, which may or may not involve the user/relevant parties, depending on the consumer's requirements and plan of action.
 
 ## Pitch Video
 
-[![Watch the video](\assets\video\video.jpg)](https://youtu.be/vOgCOoy_Bx0)
+[![Watch the video](/assets/video/video.jpg)](https://youtu.be/vOgCOoy_Bx0)
 
 ## Solution Architecture
 
-![Diagram of Workflow](\assets\workflow\workflow.png)
+![Diagram of Workflow](/assets/workflow/workflow.png)
 
 1. Input is captured from an image-capturing device (e.g. CCTV, webcam).
 2. Images are sent for Visual Recognition Processing.
@@ -45,13 +42,13 @@ Technology provides a multitude of resources and sensors that consumers and deve
 4. Node-RED further processes data from IBM IoT Platform and processed data from Visual Recognition Processing determining if the situation calls for the user to be informed.
 5. Users receive information about potential emergencies, allowing them to trigger early intervention measures.
 
-## Long description [NOT DONE]
+## Long description
 
 [More detail is available here](DESCRIPTION.md)
 
 ## Project roadmap
 
-![Roadmap](\assets\roadmap.jpg)
+![Roadmap](/assets/roadmap.jpg)
 
 ## Getting started
 
@@ -85,7 +82,6 @@ And repeat
 
 ```bash
 curl localhost:3000
-Thanks for looking at Code-and-Response!
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
