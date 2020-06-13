@@ -28,7 +28,7 @@ The rise of internet-enabled devices brought about by the Internet of Things (Io
 ### The idea
 Ubique is an early warning system empowered by machine learning, making use of diverse IoT devices, including CCTVs, environment sensors and power usage sensors. Ubique provides accurate predictions on emergency incidences, advising the emergency services on appropriate actions to optimize efficiency of scarce emergency resources. 
 
-Ubique obtains information from multiple sensors, utilizing artificial intelligence services to filter out relevant data. Ubique then utilizes Node-RED to combine the information available, running it through pre-set criteria and determining the action taken. If an action is necessary, Ubique then triggers a response, which may or may not involve the user/relevant parties, depending on the consumer's requirements and plan of action.
+Ubique obtains information from multiple sensors, utilizing artificial intelligence services to filter out relevant data. Ubique then utilizes Node-RED to combine the information available, running it through pre-set criterias and determines the action taken. If an action is necessary, Ubique will intelligently trigger an appropriate alert to involve stakeholders and emergency resources when required. 
 
 ## Pitch Video
 
@@ -42,7 +42,7 @@ Ubique obtains information from multiple sensors, utilizing artificial intellige
 2. Images are sent for Visual Recognition Processing.
 3. IBM Internet of Things (IoT) Platform receives data from connected devices.
 4. Node-RED further processes data from IBM IoT Platform and processed data from Visual Recognition Processing determining if the situation calls for the user to be informed.
-5. Users receive information about potential emergencies, allowing them to trigger early intervention measures.
+5. User (SCDF) receive information about potential emergencies, allowing them to trigger early intervention measures.
 
 ## Long Description
 
@@ -146,7 +146,6 @@ You can find a running system to test at [https://ubique.mybluemix.net/red](http
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 * **Symus Say**
 * **Wong Wai Chung**
 * **Nicholas Tan**
