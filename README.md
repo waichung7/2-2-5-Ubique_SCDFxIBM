@@ -42,17 +42,39 @@ Ubique obtains information from multiple sensors, utilizing artificial intellige
 4. Node-RED further processes data from IBM IoT Platform and processed data from Visual Recognition Processing determining if the situation calls for the user to be informed.
 5. Users receive information about potential emergencies, allowing them to trigger early intervention measures.
 
-## Long description
+## Long Description
 
 [More detail is available here](DESCRIPTION.md)
 
-## Project roadmap
+## Project Roadmap
 
 ![Roadmap](/assets/roadmap.jpg)
 
-## Getting started
+## Getting Started
+***
+### Cloud Installation (Recommended)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+1. Follow the instructions provided by IBM for [Creating a Node-RED Starter Application](https://developer.ibm.com/components/node-red/tutorials/how-to-create-a-node-red-starter-application/).
+2. Open your Node-RED Application
+3. Navigate to Menu --> Manage Palette --> Install
+![](/assets/install/menu1.png)
+4. Key in the following packages in the search bar individually and install them: ![](/assets/install/settings.png)
+```
+node-red-contrib-browser-utils
+node-red-contrib-image-output
+node-red-contrib-scx-ibmiotapp
+node-red-node-twilio
+```
+5. Close the User Settings Page
+6. Open the Menu --> Import --> ![](/assets/install/import.png)
+![](/assets/install/menu2.png)
+7. Navigate to /assets/install and select the flow.json file.
+8. Press the Import button
+9. Deploy!
+***
+### Local Installation 
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Prerequisites
 
@@ -83,9 +105,7 @@ And repeat
 ```bash
 curl localhost:3000
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
+***
 ## Running the tests
 
 Explain how to run the automated tests for this system
@@ -110,9 +130,9 @@ npx eslint --init
 npx eslint sample-file.js
 ```
 
-## Live demo [NOT DONE]
+## Live Demo
 
-You can find a running system to test at [callforcode.mybluemix.net](http://callforcode.mybluemix.net/)
+You can find a running system to test at [https://ubique.mybluemix.net/red](https://ubique.mybluemix.net/red).
 
 ## Built with
 

@@ -1,0 +1,753 @@
+[
+    {
+        "id": "3ce5a8e6.d51",
+        "type": "tab",
+        "label": "Ubique",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "59d0899a.dd0bb",
+        "type": "debug",
+        "z": "3ce5a8e6.d51",
+        "name": "name",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload.d.name",
+        "targetType": "msg",
+        "x": 440,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "60422c3d.0e05cc",
+        "type": "debug",
+        "z": "3ce5a8e6.d51",
+        "name": "Temperature",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload.d.temp",
+        "targetType": "msg",
+        "x": 460,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "39b12efc.70918a",
+        "type": "debug",
+        "z": "3ce5a8e6.d51",
+        "name": "Humidity",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload.d.humidity",
+        "targetType": "msg",
+        "x": 450,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b911a937.2f72",
+        "type": "debug",
+        "z": "3ce5a8e6.d51",
+        "name": "Object Temperature",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload.d.objectTemp",
+        "targetType": "msg",
+        "x": 480,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ffff64cc.2559a",
+        "type": "function",
+        "z": "3ce5a8e6.d51",
+        "name": "obtain temperature",
+        "func": "msg.topic = \"Temperature\";\nreturn {payload:msg.payload.d.temp};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 580,
+        "wires": [
+            [
+                "ab0558b3.fdf1d8",
+                "72403d8.10a63c4"
+            ]
+        ]
+    },
+    {
+        "id": "ab0558b3.fdf1d8",
+        "type": "ui_gauge",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "group": "c4ad7ca3.a48208",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature Gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 740,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "13c1b075.ab09f",
+        "type": "function",
+        "z": "3ce5a8e6.d51",
+        "name": "Obtain Humidity",
+        "func": "msg.topic = \"Humidity\";\nreturn {payload:msg.payload.d.humidity};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 460,
+        "y": 640,
+        "wires": [
+            [
+                "3315ef51.d076c",
+                "b87e8b55.2eaa48"
+            ]
+        ]
+    },
+    {
+        "id": "3315ef51.d076c",
+        "type": "ui_gauge",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "group": "c4ad7ca3.a48208",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity Gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 720,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "4bbee400.4d6c2c",
+        "type": "ibmiot in",
+        "z": "3ce5a8e6.d51",
+        "authentication": "quickstart",
+        "apiKey": "",
+        "inputType": "evt",
+        "logicalInterface": "",
+        "ruleId": "",
+        "deviceId": "57be57287892",
+        "applicationId": "",
+        "deviceType": "+",
+        "eventType": "+",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT",
+        "service": "quickstart",
+        "allDevices": "",
+        "allApplications": "",
+        "allDeviceTypes": true,
+        "allLogicalInterfaces": "",
+        "allEvents": true,
+        "allCommands": "",
+        "allFormats": "",
+        "qos": 0,
+        "x": 90,
+        "y": 520,
+        "wires": [
+            [
+                "59d0899a.dd0bb",
+                "60422c3d.0e05cc",
+                "39b12efc.70918a",
+                "b911a937.2f72",
+                "ffff64cc.2559a",
+                "13c1b075.ab09f"
+            ]
+        ]
+    },
+    {
+        "id": "84eddc7e.12b11",
+        "type": "camera",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "x": 70,
+        "y": 840,
+        "wires": [
+            [
+                "434e23e2.cffbf4",
+                "3bd4fd33.af0182"
+            ]
+        ]
+    },
+    {
+        "id": "388e5956.fcb926",
+        "type": "visual-recognition-v3",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "vr-service-endpoint": "",
+        "image-feature": "classifyImage",
+        "lang": "en",
+        "x": 470,
+        "y": 800,
+        "wires": [
+            [
+                "f8580c7f.df3bb",
+                "e05bbb95.8cc278",
+                "6615fa4b.0043e4"
+            ]
+        ]
+    },
+    {
+        "id": "f8580c7f.df3bb",
+        "type": "function",
+        "z": "3ce5a8e6.d51",
+        "name": "Obtain Most Likely Item",
+        "func": "var item1  = { payload: msg.result.images[0].classifiers[0].classes[0]};\nreturn item1;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 750,
+        "y": 840,
+        "wires": [
+            [
+                "2853658e.c87712"
+            ]
+        ]
+    },
+    {
+        "id": "2853658e.c87712",
+        "type": "ui_text",
+        "z": "3ce5a8e6.d51",
+        "group": "c4ad7ca3.a48208",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Most Likely: ",
+        "format": "{{msg.payload.class | uppercase}}",
+        "layout": "row-spread",
+        "x": 990,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "434e23e2.cffbf4",
+        "type": "image",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 260,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "e05bbb95.8cc278",
+        "type": "function",
+        "z": "3ce5a8e6.d51",
+        "name": "Object Detected?",
+        "func": "let objectDetected = false;\n\nlet i=0;\ntry \n{\n  while(!objectDetected)\n  {\n    if (msg.result.images[0].classifiers[0].classes[i].class == 'person') {\n        objectDetected = true;\n        break;\n    }\n    i++;\n  }\n}\ncatch(err) {\n  objectDetected = false\n}\n\nmsg.payload = {\"ObjectDetected\":objectDetected,\"Location\": msg.topic};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 730,
+        "y": 760,
+        "wires": [
+            [
+                "ad53f636.c7584",
+                "2c454482.60bb54",
+                "a74d5a49.7a1ee"
+            ]
+        ]
+    },
+    {
+        "id": "ad53f636.c7584",
+        "type": "ui_gauge",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "group": "c4ad7ca3.a48208",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Object Detected",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1000,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "17dd495d.3090d7",
+        "type": "fileinject",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "x": 80,
+        "y": 740,
+        "wires": [
+            [
+                "5d7fed77.292e2c"
+            ]
+        ]
+    },
+    {
+        "id": "90280b39.a01278",
+        "type": "join",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1170,
+        "y": 600,
+        "wires": [
+            [
+                "c875774b.17b878"
+            ]
+        ]
+    },
+    {
+        "id": "2c454482.60bb54",
+        "type": "change",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Fire",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 660,
+        "wires": [
+            [
+                "90280b39.a01278",
+                "2683b8e.4b5d648"
+            ]
+        ]
+    },
+    {
+        "id": "34b62f4c.3023a",
+        "type": "template",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "There is a fire! \nCurrent Temperature: {{payload.Temperature}}\nCurrent Humidity: {{payload.Humidity}}\nLocation of Incident: {{payload.Fire.Location}}\n",
+        "output": "str",
+        "x": 1680,
+        "y": 560,
+        "wires": [
+            [
+                "c54652f4.644b68",
+                "a9104255.97e1c"
+            ]
+        ]
+    },
+    {
+        "id": "c875774b.17b878",
+        "type": "function",
+        "z": "3ce5a8e6.d51",
+        "name": "Brain",
+        "func": "// threshold values\nvar temp = 50;\nvar humid = 50;\nvar count = 0;\n\nif(msg.payload.Fire.ObjectDetected)\n{\n    count++;\n}\nif(msg.payload.Temperature > temp)\n{\n    count++;\n}\nif(msg.payload.Humidity > humid)\n{\n    count++;\n}\n\nif(count==3)\n{\n    msg.payload.verify = 1;\n}\nelse if (count==2)\n{\n    msg.payload.verify = 2;\n}\nelse \n{\n    msg.payload.verify = 0;\n}\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1310,
+        "y": 600,
+        "wires": [
+            [
+                "d79ae73f.466e88"
+            ]
+        ]
+    },
+    {
+        "id": "754f6755.8e906",
+        "type": "switch",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "property": "payload.verify",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1510,
+        "y": 600,
+        "wires": [
+            [
+                "34b62f4c.3023a"
+            ],
+            [
+                "f2a8eb58.8fa4c8"
+            ]
+        ]
+    },
+    {
+        "id": "72403d8.10a63c4",
+        "type": "change",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Temperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 580,
+        "wires": [
+            [
+                "90280b39.a01278"
+            ]
+        ]
+    },
+    {
+        "id": "b87e8b55.2eaa48",
+        "type": "change",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Humidity",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 620,
+        "wires": [
+            [
+                "90280b39.a01278"
+            ]
+        ]
+    },
+    {
+        "id": "c54652f4.644b68",
+        "type": "debug",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1830,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "d79ae73f.466e88",
+        "type": "rbe",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 1310,
+        "y": 680,
+        "wires": [
+            [
+                "953e2119.59cc9"
+            ]
+        ]
+    },
+    {
+        "id": "953e2119.59cc9",
+        "type": "delay",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1320,
+        "y": 760,
+        "wires": [
+            [
+                "754f6755.8e906"
+            ]
+        ]
+    },
+    {
+        "id": "5d7fed77.292e2c",
+        "type": "change",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "File Camera",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 740,
+        "wires": [
+            [
+                "388e5956.fcb926"
+            ]
+        ]
+    },
+    {
+        "id": "3bd4fd33.af0182",
+        "type": "change",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "House Camera",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 860,
+        "wires": [
+            [
+                "388e5956.fcb926"
+            ]
+        ]
+    },
+    {
+        "id": "a9104255.97e1c",
+        "type": "twilio out",
+        "z": "3ce5a8e6.d51",
+        "twilio": "fb33916d.ab1a",
+        "twilioType": "sms",
+        "url": "",
+        "number": "+6597284111",
+        "name": "",
+        "x": 1830,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "2683b8e.4b5d648",
+        "type": "debug",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 990,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "32b4ee70.5e7212",
+        "type": "debug",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1830,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "f2a8eb58.8fa4c8",
+        "type": "template",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "There might be a fire! 2/3 Sensors point towards a fire!\nCurrent Temperature: {{payload.Temperature}}\nCurrent Humidity: {{payload.Humidity}}\nLocation of Incident: {{payload.Fire.Location}}\n",
+        "output": "str",
+        "x": 1680,
+        "y": 640,
+        "wires": [
+            [
+                "32b4ee70.5e7212",
+                "6b72f792.d37a58"
+            ]
+        ]
+    },
+    {
+        "id": "6615fa4b.0043e4",
+        "type": "debug",
+        "z": "3ce5a8e6.d51",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "result.images.0.classifiers.0.classes",
+        "targetType": "msg",
+        "x": 810,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "a74d5a49.7a1ee",
+        "type": "debug",
+        "z": "3ce5a8e6.d51",
+        "name": "Object Detection debugger",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 980,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "6b72f792.d37a58",
+        "type": "twilio out",
+        "z": "3ce5a8e6.d51",
+        "twilio": "fb33916d.ab1a",
+        "twilioType": "sms",
+        "url": "",
+        "number": "+6597284111",
+        "name": "",
+        "x": 1830,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "c4ad7ca3.a48208",
+        "type": "ui_group",
+        "z": "",
+        "name": "Sensors",
+        "tab": "e7dc1e26.159d08",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "fb33916d.ab1a",
+        "type": "twilio-api",
+        "z": "",
+        "name": "",
+        "sid": "AC8fb782132f5c53804cfb0e4d86867c2e",
+        "from": "+1 201 928 5104"
+    },
+    {
+        "id": "e7dc1e26.159d08",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Ubique",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
