@@ -4,7 +4,11 @@
 
 [Project Website](https://code-and-response.github.io/Project-Sample/)
 #
-## Input
+## Current problems with current emergency response
+### 1. Slow Detection Time
+### 2. False Positives/Alarms
+### 3. Overreaction to incidents
+## Implementation
 
 Ubique takes data from multiple sources, but for demonstration purposes, we have used IBM's IoT Platform and Webcam input to illustrate how such input data can be processed. For this sample flow, we ilustrate how sensor data can be used to analyze if there is a fire, and if so, to activate early intervention measures (e.g. sprinklers, activation of fire shutters).
 
